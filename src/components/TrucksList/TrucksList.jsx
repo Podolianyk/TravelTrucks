@@ -12,6 +12,10 @@ const TrucksList = ({ trucks }) => {
     setPage(page + 1);
   };
 
+  if (trucks.length === 0) {
+    return <p>No trucks found for the selected filters.</p>; // Додайте повідомлення, якщо немає вантажів
+  }
+
   return (
     <div>
       <ul className={css.trucks_list}>

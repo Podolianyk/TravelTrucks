@@ -40,24 +40,66 @@ const CataloguePage = ({}) => {
     getData();
   }, []);
 
-  const handleFilter = (filters) => {
-    const { location, ...selectedFilters } = filters;
+  // const handleFilter = (filters) => {
+  //   const { location, ...selectedFilters } = filters;
 
-    const filtered = trucks.filter((truck) => {
-      const matchesLocation = location
-        ? truck.location.includes(location)
-        : true;
+  //   const filtered = trucks.filter((truck) => {
+  //     const matchesLocation = location
+  //       ? truck.location.includes(location)
+  //       : true;
 
-      const matchesEquipment = Object.entries(selectedFilters).every(
-        ([key, value]) => {
-          return !value || truck.equipment.includes(key); // Припускаємо, що truck.equipment - це масив з назвами обладнання
-        }
-      );
+  //     const matchesEquipment = Object.entries(selectedFilters).every(
+  //       ([key, value]) => {
+  //         return !value || truck.equipment.includes(key); // Припускаємо, що truck.equipment - це масив з назвами обладнання
+  //       }
+  //     );
 
-      return matchesLocation && matchesEquipment;
+  //     return matchesLocation && matchesEquipment;
+  //   });
+
+  //   setFilteredTrucks(filtered);
+  // };
+  const handleFilter = (filterCriteria) => {
+    const filteredTrucks = trucks.filter((truck) => {
+      let isMatch = true;
+
+      if (
+        filterCriteria.location &&
+        !truck.location.includes(filterCriteria.location)
+      ) {
+        isMatch = false;
+      }
+
+      // Фільтрація по додатковим властивостям
+      if (filterCriteria.AC && !truck.AC) {
+        isMatch = false;
+      }
+      if (filterCriteria.automatic && truck.transmission !== "automatic") {
+        isMatch = false;
+      }
+      if (filterCriteria.kitchen && !truck.kitchen) {
+        isMatch = false;
+      }
+      if (filterCriteria.TV && !truck.TV) {
+        isMatch = false;
+      }
+      if (filterCriteria.bathroom && !truck.bathroom) {
+        isMatch = false;
+      }
+      if (filterCriteria.alcove && !truck.alcove) {
+        isMatch = false;
+      }
+      if (filterCriteria.van && !truck.van) {
+        isMatch = false;
+      }
+      if (filterCriteria.fullyIntegrated && !truck.fullyIntegrated) {
+        isMatch = false;
+      }
+
+      return isMatch;
     });
 
-    setFilteredTrucks(filtered);
+    setFilteredTrucks(filteredTrucks);
   };
 
   return (

@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import { Bars } from "react-loader-spinner";
 import Navigation from "../Navigation/Navigation.jsx";
 import HomePage from "../../pages/HomePage/HomePage";
 import CataloguePage from "../../pages/CataloguePage/CataloguePage";
@@ -6,13 +7,24 @@ import DetailPage from "../../pages/DetailPage/DetailPage";
 import NotFoundPage from "../../pages/NotFoundPage/NotFoundPage.jsx";
 import Features from "../Features/Features.jsx";
 import Reviews from "../Reviews/Reviews.jsx";
-import css from "./App.module.css";
+// import css from "./App.module.css";
 
 // import Loyaut from "../Loyaut/Loyaut.jsx";
 
 const App = ({}) => {
   return (
     <div>
+      {/* <div className={css.loader}>
+        <Bars
+          height="80"
+          width="80"
+          color="#7277e3"
+          ariaLabel="bars-loading"
+          wrapperStyle={{}}
+          wrapperClass=""
+          visible={true}
+        />
+      </div> */}
       <Navigation />
 
       <Routes>

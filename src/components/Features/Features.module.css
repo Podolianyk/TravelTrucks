@@ -1,6 +1,6 @@
 .features_container {
   display: flex;
-  gap: 40px;
+  justify-content: space-between;
   padding-top: 44px;
   padding-bottom: 44px;
 }

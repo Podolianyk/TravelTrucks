@@ -1,0 +1,57 @@
+.review_card_container {
+  width: 631px;
+  /* padding: 44px 52px; */
+  border-radius: 10px;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+}
+
+.name_container {
+  display: flex;
+  gap: 16px;
+  padding-bottom: 16px;
+  align-items: center;
+}
+
+.first_letter {
+  font-weight: 600;
+  font-size: 24px;
+  align-items: center;
+  color: #e44848;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50px;
+  background-color: #f2f4f7;
+}
+
+.trucks_list {
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+}
+
+.icon_review {
+  fill: #ffc531;
+}
+
+.name {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  align-items: center;
+  color: #101828;
+}
+
+.comment {
+  font-size: 16px;
+  line-height: 24px;
+  color: #475467;
+}

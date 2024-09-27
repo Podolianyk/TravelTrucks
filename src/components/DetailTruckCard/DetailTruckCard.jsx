@@ -2,7 +2,6 @@ import clsx from "clsx";
 import { FaStar } from "react-icons/fa6";
 import { CiMap } from "react-icons/ci";
 import css from "./DetailTruckCard.module.css";
-import { useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 
 const getLinkClass = ({ isActive }) => {

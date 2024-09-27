@@ -9,7 +9,8 @@ import { MdOutlineAutoAwesomeMosaic } from "react-icons/md";
 import { TiThSmallOutline } from "react-icons/ti";
 import { HiOutlineViewGrid } from "react-icons/hi";
 import { TbHierarchy2 } from "react-icons/tb";
-import { RiGasStationFill } from "react-icons/ri";
+import { GiMechanicalArm } from "react-icons/gi";
+
 import Button from "../Button/Button";
 import css from "./TruckCard.module.css";
 import { useNavigate } from "react-router-dom";
@@ -37,17 +38,6 @@ const TruckCard = ({
   const handleOpenDetailPage = () => {
     navigate(`${id}`);
   };
-
-  console.log({
-    AC,
-    transmission,
-    kitchen,
-    TV,
-    bathroom,
-    alcove,
-    van,
-    fullyIntegrated,
-  });
 
   return (
     <div className={css.truckCard_container}>
@@ -96,7 +86,7 @@ const TruckCard = ({
               )}
               {transmission === "manual" && (
                 <div className={css.div_properties}>
-                  <RiGasStationFill className={css.icon} />
+                  <GiMechanicalArm className={css.icon} />
                   <p>Manual</p>
                 </div>
               )}

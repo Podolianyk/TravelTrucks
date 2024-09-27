@@ -96,11 +96,11 @@ const ReservationForm = ({ onReservation }) => {
                   customInput={
                     <CustomDateInput
                       className={`${css.formInput} custom-input`}
-                      //   name="date"
                       placeholder="Booking date*"
                     />
                   }
                 />
+
                 <ErrorMessage
                   className={css.error}
                   name="date"

@@ -1,0 +1,6 @@
+.reviews_container {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 44px;
+  padding-bottom: 44px;
+}

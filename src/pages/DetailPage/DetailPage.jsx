@@ -1,4 +1,4 @@
-import { Outlet, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getTrucksById } from "../../trucks-api";
 import DetailTruckCard from "../../components/DetailTruckCard/DetailTruckCard";
@@ -16,7 +16,7 @@ const DetailPage = ({}) => {
         setIsLoading(true);
         setIsError(false);
         const data = await getTrucksById(id);
-        // console.log(data);
+
         setTruckId(data);
       } catch (error) {
         setIsError(true);
@@ -32,7 +32,6 @@ const DetailPage = ({}) => {
       {isLoading && <p>Loading information, please wait...</p>}
       {isError && <p>Oops! There was an error! Try reloading!</p>}
       {truckId && <DetailTruckCard truckId={truckId} />}
-      {/* <Outlet /> */}
     </div>
   );
 };
