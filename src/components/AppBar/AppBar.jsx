@@ -4,7 +4,11 @@ import { useState } from "react";
 const AppBar = ({}) => {
   return (
     <header className={css.header}>
-      <p>Hello</p>
+      <img src="../../image/travelTrucks-logo.jpg" alt="logo" />
+      {/* <p className={css.logo}>
+        Travel<span className={css.logo_span}>Trucks</span>
+      </p> */}
+      <Navigation />
     </header>
   );
 };

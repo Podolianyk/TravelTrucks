@@ -1,5 +1,4 @@
 .button {
-  padding: 16px 63px;
   border: none;
   background-color: #e44848;
   color: #ffffff;
@@ -12,4 +11,32 @@
 
 .button:hover {
   background-color: #d84343;
+}
+
+.viewNowButton {
+  padding: 16px 48.5px;
+}
+
+.sendButton {
+  padding: 16px 63px;
+}
+
+.showMoreButton {
+  padding: 16px 40px;
+}
+
+.searchButton {
+  padding: 16px 56.5px;
+}
+
+.loadMoreButton {
+  background-color: transparent;
+  color: #101828;
+  border: 1px solid #dadde1;
+  padding: 16px 32px;
+}
+
+.loadMoreButton:hover {
+  background-color: transparent;
+  border: 1px solid #e44848;
 }

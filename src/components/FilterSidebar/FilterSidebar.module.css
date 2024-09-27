@@ -1,0 +1,102 @@
+.filter_sidebar_container {
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.locationForm_label {
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0;
+  color: #6c717b;
+  margin-bottom: 8px;
+}
+
+.locationForm_container {
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-bottom: 40px;
+}
+
+.locationForm_select {
+  width: 360px;
+  background-color: #f7f7f7;
+  border: none;
+  border-radius: 12px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 46px;
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0;
+  color: #6c717b;
+  appearance: none;
+  cursor: pointer;
+}
+
+.locationForm_select:focus {
+  outline: none;
+  color: #101828;
+}
+
+.select_wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.select_icon {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.filtersForm_main_title {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0;
+  color: #475467;
+  padding-bottom: 32px;
+}
+
+.filtersForm_title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0;
+  color: #101828;
+  padding-bottom: 24px;
+}
+
+.filtersForm_title_container {
+  border-bottom: 1px solid #dadde1;
+}
+
+.filtersForm_container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+}
+
+.filterElement_boxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-bottom: 32px;
+}

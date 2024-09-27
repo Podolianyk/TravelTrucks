@@ -1,17 +1,55 @@
+import { Route, Routes } from "react-router-dom";
+import Navigation from "../Navigation/Navigation.jsx";
+import HomePage from "../../pages/HomePage/HomePage";
+import CataloguePage from "../../pages/CataloguePage/CataloguePage";
+import DetailPage from "../../pages/DetailPage/DetailPage";
+import NotFoundPage from "../../pages/NotFoundPage/NotFoundPage.jsx";
+import Features from "../Features/Features.jsx";
+import Reviews from "../Reviews/Reviews.jsx";
 import css from "./App.module.css";
-import { useState } from "react";
-import ReservationForm from "../ReservationForm/ReservationForm";
+
+// import Loyaut from "../Loyaut/Loyaut.jsx";
 
 const App = ({}) => {
-  const handleNewOrder = (newOrder) => {
-    console.log(newOrder);
-  };
-
   return (
     <div>
-      <ReservationForm onReservation={handleNewOrder} />
+      <Navigation />
+
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/catalog" element={<CataloguePage />} />
+        <Route path="/catalog/:id" element={<DetailPage />}>
+          <Route path="features" element={<Features />} />
+          <Route path="reviews" element={<Reviews />} />
+        </Route>
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
     </div>
   );
 };
 
 export default App;
+
+// <Loyaut>
+
+// {isLoading && <p>Loading information, please wait...</p>}
+// {isError && <p>Oops! There was an error! Try reloading!</p>}
+// {trucks.length > 0 && (
+//   <CataloguePage locations={uniqueLocation} trucks={trucks} />
+// )}
+{
+  /* {trucks.length > 0 && <DetailPage trucks={trucks} />} */
+}
+
+{
+  /* <ReservationForm onReservation={handleNewOrder} /> */
+}
+{
+  /* <FilterSidebar locations={uniqueLocation} /> */
+}
+{
+  /* <TrucksList trucks={trucks} /> */
+}
+{
+  /* </Loyaut> */
+}

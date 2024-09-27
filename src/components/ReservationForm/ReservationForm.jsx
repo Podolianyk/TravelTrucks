@@ -95,7 +95,7 @@ const ReservationForm = ({ onReservation }) => {
                   placeholderText="Booking date*"
                   customInput={
                     <CustomDateInput
-                      className={css.formInput}
+                      className={`${css.formInput} custom-input`}
                       //   name="date"
                       placeholder="Booking date*"
                     />
