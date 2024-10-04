@@ -9,10 +9,7 @@ const TrucksList = () => {
   const [visibleTrucksCount, setVisibleTrucksCount] = useState(4);
   const [page, setPage] = useState(1);
 
-  // const filteredItems = useSelector(selectFilterTrucks);
-
   const trucks = useSelector(selectFilterTrucks);
-  // console.log(trucks);
 
   const handleLoadMore = () => {
     setVisibleTrucksCount(visibleTrucksCount + 4);
@@ -26,7 +23,7 @@ const TrucksList = () => {
           No trucks found for the selected filters.
         </p>
       </div>
-    ); // Додайте повідомлення, якщо немає вантажів
+    );
   }
 
   return (

@@ -7,12 +7,9 @@ export const getTrucks = createAsyncThunk(
   "trucks/getAll",
   async (_, thunkAPI) => {
     try {
-      // console.log("Sending GET request to /campers...");
       const response = await axios.get("/");
-      // console.log("Response data:", response.data.items);
       return response.data.items;
     } catch (error) {
-      // console.error("Error fetching trucks:", error);
       return thunkAPI.rejectWithValue(error.message);
     }
   }

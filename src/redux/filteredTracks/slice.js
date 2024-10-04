@@ -18,18 +18,15 @@ const filteredSlice = createSlice({
   },
   reducers: {
     setFilters: (state, action) => {
-      console.log("setFilters");
-      console.log(action.payload);
-      state.filters = action.payload; // Зберігаємо нові фільтри
+      state.filters = action.payload;
+      console.log(state.filters);
     },
     setItems: (state, action) => {
-      console.log("setItems");
-      state.items = action.payload; // Завантаження всіх елементів
+      state.items = action.payload;
     },
-    filterItems: (state) => {},
   },
 });
 
-export const { setFilters, setItems, filterItems } = filteredSlice.actions;
+export const { setFilters, setItems } = filteredSlice.actions;
 
 export default filteredSlice.reducer;

@@ -17,7 +17,6 @@ const Reviews = ({}) => {
         setIsLoading(true);
         setIsError(false);
         const data = await getTrucksById(id);
-        console.log(data);
         setTruckId(data);
       } catch (error) {
         setIsError(true);
@@ -27,8 +26,6 @@ const Reviews = ({}) => {
     };
     getDataOfTrack();
   }, [id]);
-
-  console.log(truckId);
   return (
     <div className={css.reviews_container}>
       {isLoading && <p>Loading information, please wait...</p>}

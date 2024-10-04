@@ -17,7 +17,6 @@ const Features = ({}) => {
         setIsLoading(true);
         setIsError(false);
         const data = await getTrucksById(id);
-        // console.log(data);
         setTruckId(data);
       } catch (error) {
         setIsError(true);

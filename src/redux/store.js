@@ -17,7 +17,7 @@ import selectReducer from "./selectedTracks/slice";
 const selectPersistConfig = {
   key: "select",
   storage,
-  whitelist: ["items"], //внести властивості, які треба зберегти в локальному сховищі
+  whitelist: ["items"],
 };
 
 const persistedSelectReducer = persistReducer(
@@ -28,7 +28,7 @@ const persistedSelectReducer = persistReducer(
 const filterPersistConfig = {
   key: "filter",
   storage,
-  whitelist: ["value"], //внести властивості, які треба зберегти в локальному сховищі
+  whitelist: ["filters"],
 };
 
 const persistedfilterReducer = persistReducer(
