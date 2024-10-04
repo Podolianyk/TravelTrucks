@@ -14,6 +14,12 @@ import { GiMechanicalArm } from "react-icons/gi";
 import Button from "../Button/Button";
 import css from "./TruckCard.module.css";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { selectSelectedTrucks } from "../../redux/selectedTracks/selectors";
+import {
+  addTruckToSelect,
+  removeTruckFromSelect,
+} from "../../redux/selectedTracks/slice";
 
 const TruckCard = ({
   name,
@@ -33,8 +39,39 @@ const TruckCard = ({
   van,
   fullyIntegrated,
 }) => {
-  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const selectedTrucks = useSelector(selectSelectedTrucks);
 
+  const isTruckSelected = selectedTrucks.some((truck) => truck.id === id);
+
+  const handleAddTruck = () => {
+    if (isTruckSelected) {
+      dispatch(removeTruckFromSelect(id));
+    } else {
+      dispatch(
+        addTruckToSelect({
+          name,
+          gallery,
+          price,
+          id,
+          reviews,
+          location,
+          description,
+          rating,
+          AC,
+          transmission,
+          kitchen,
+          TV,
+          bathroom,
+          alcove,
+          van,
+          fullyIntegrated,
+        })
+      );
+    }
+  };
+
+  const navigate = useNavigate();
   const handleOpenDetailPage = () => {
     navigate(`${id}`);
   };
@@ -53,9 +90,19 @@ const TruckCard = ({
           <div className={css.truckCard_name_with_price_container}>
             <h3 className={css.truckCard_title}>{name}</h3>
             <div className={css.truckCard_favourite_container}>
-              <p className={css.truckCard_price}>{`€${price}`}</p>
-              <button className={css.truckCard_favourite_btn}>
-                <CiHeart className={css.icon_favourite} />
+              <p className={css.truckCard_price}>{`€${price
+                .toFixed(2)
+                .replace(".", ",")}`}</p>
+              <button
+                className={css.truckCard_favourite_btn}
+                onClick={handleAddTruck}
+              >
+                <CiHeart
+                  className={css.icon_favourite}
+                  style={{
+                    color: isTruckSelected ? "#E44848" : "#101828",
+                  }}
+                />
               </button>
             </div>
           </div>

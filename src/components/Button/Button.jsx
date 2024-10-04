@@ -1,6 +1,5 @@
 import clsx from "clsx";
 import css from "./Button.module.css";
-import { useState } from "react";
 
 const Button = ({ children, type = "button", onClick, variant }) => {
   return (

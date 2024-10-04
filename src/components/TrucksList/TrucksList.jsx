@@ -1,11 +1,18 @@
+import { useSelector } from "react-redux";
 import Button from "../Button/Button";
 import TruckCard from "../TruckCard/TruckCard";
 import css from "./TrucksList.module.css";
 import { useState } from "react";
+import { selectFilterTrucks } from "../../redux/filteredTracks/selectors";
 
-const TrucksList = ({ trucks }) => {
+const TrucksList = () => {
   const [visibleTrucksCount, setVisibleTrucksCount] = useState(4);
   const [page, setPage] = useState(1);
+
+  // const filteredItems = useSelector(selectFilterTrucks);
+
+  const trucks = useSelector(selectFilterTrucks);
+  // console.log(trucks);
 
   const handleLoadMore = () => {
     setVisibleTrucksCount(visibleTrucksCount + 4);
@@ -13,7 +20,13 @@ const TrucksList = ({ trucks }) => {
   };
 
   if (trucks.length === 0) {
-    return <p>No trucks found for the selected filters.</p>; // Додайте повідомлення, якщо немає вантажів
+    return (
+      <div className={css.no_trucks_container}>
+        <p className={css.description}>
+          No trucks found for the selected filters.
+        </p>
+      </div>
+    ); // Додайте повідомлення, якщо немає вантажів
   }
 
   return (

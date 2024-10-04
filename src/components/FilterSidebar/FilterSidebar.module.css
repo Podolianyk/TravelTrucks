@@ -2,6 +2,9 @@
   max-width: 360px;
   display: flex;
   flex-direction: column;
+}
+
+form {
   gap: 40px;
 }
 
@@ -87,11 +90,6 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
-}
-
-.icon {
-  width: 32px;
-  height: 32px;
 }
 
 .filterElement_boxes {

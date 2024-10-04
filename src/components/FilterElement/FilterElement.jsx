@@ -1,8 +1,17 @@
 import css from "./FilterElement.module.css";
-import { useState } from "react";
+import clsx from "clsx";
+import { BsDroplet } from "react-icons/bs";
 
-const FilterElement = ({ children }) => {
-  return <button className={css.filterButton}>{children}</button>;
+const FilterElement = ({ Icon = BsDroplet, text, onClick, active }) => {
+  return (
+    <div
+      onClick={onClick}
+      className={clsx(css.filterButton, active && css.active)}
+    >
+      <Icon className={ css.icon} />
+      <p>{text}</p>
+    </div>
+  );
 };
 
 export default FilterElement;

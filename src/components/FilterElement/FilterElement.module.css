@@ -4,8 +4,19 @@
   width: 112px;
   height: 96px;
   background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
-.filterButton:active {
+.active {
   border: 1px solid #e44848;
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
 }

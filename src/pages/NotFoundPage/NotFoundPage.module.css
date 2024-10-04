@@ -1,3 +1,22 @@
-.message {
-  padding-top: 20px;
+.message_container {
+  width: 888px;
+  height: 100px;
+  margin: auto;
+  padding: 24px;
+  border: 1px solid #dadde1;
+  border-radius: 20px;
+}
+
+.description {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 0;
+  color: #101828;
+  text-align: center;
+}
+
+.link {
+  color: #e44848;
+  text-decoration: underline;
 }

@@ -1,5 +1,4 @@
 import css from "./AppBar.module.css";
-import { useState } from "react";
 
 const AppBar = ({}) => {
   return (

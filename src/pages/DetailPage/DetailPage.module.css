@@ -1,0 +1,5 @@
+.detail_page_container {
+  display: flex;
+  padding: 48px 64px;
+  justify-content: center;
+}

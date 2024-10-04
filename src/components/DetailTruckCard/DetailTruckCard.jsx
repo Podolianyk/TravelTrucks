@@ -1,8 +1,10 @@
+import { NavLink, Outlet } from "react-router-dom";
+import { Suspense } from "react";
 import clsx from "clsx";
 import { FaStar } from "react-icons/fa6";
 import { CiMap } from "react-icons/ci";
+import { Bars } from "react-loader-spinner";
 import css from "./DetailTruckCard.module.css";
-import { NavLink, Outlet } from "react-router-dom";
 
 const getLinkClass = ({ isActive }) => {
   return clsx(css.link, isActive && css.active);
@@ -35,7 +37,9 @@ const DetailTruckCard = ({ truckId }) => {
             </p>
           </div>
         </div>
-        <p className={css.detail_price}>{`€${truckId.price}`}</p>
+        <p className={css.detail_price}>{`€${truckId.price
+          .toFixed(2)
+          .replace(".", ",")}`}</p>
       </div>
       <div>
         <ul className={css.detail_gallery_list}>
@@ -64,7 +68,23 @@ const DetailTruckCard = ({ truckId }) => {
           </NavLink>
         </li>
       </ul>
+      {/* <Suspense
+        fallback={
+          <div className={css.loader}>
+            <Bars
+              height="80"
+              width="80"
+              color="#7277e3"
+              ariaLabel="bars-loading"
+              wrapperStyle={{}}
+              wrapperClass=""
+              visible={true}
+            />
+          </div>
+        }
+      > */}
       <Outlet />
+      {/* </Suspense> */}
     </div>
   );
 };

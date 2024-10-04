@@ -28,7 +28,7 @@ const DetailPage = ({}) => {
   }, [id]);
 
   return (
-    <div>
+    <div className={css.detail_page_container}>
       {isLoading && <p>Loading information, please wait...</p>}
       {isError && <p>Oops! There was an error! Try reloading!</p>}
       {truckId && <DetailTruckCard truckId={truckId} />}
