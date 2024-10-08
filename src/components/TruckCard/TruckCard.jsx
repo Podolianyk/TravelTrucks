@@ -73,7 +73,9 @@ const TruckCard = ({
 
   const navigate = useNavigate();
   const handleOpenDetailPage = () => {
-    navigate(`${id}`);
+    if (id) {
+      navigate(`/catalog/${id}`);
+    }
   };
 
   return (

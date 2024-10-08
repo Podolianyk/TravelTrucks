@@ -1,8 +1,8 @@
 import AppBar from "../AppBar/AppBar";
-import css from "./Loyaut.module.css";
+import css from "./Layout.module.css";
 import { useState } from "react";
 
-const Loyaut = ({ children }) => {
+const Layout = ({ children }) => {
   return (
     <div>
       <AppBar />
@@ -11,4 +11,4 @@ const Loyaut = ({ children }) => {
   );
 };
 
-export default Loyaut;
+export default Layout;

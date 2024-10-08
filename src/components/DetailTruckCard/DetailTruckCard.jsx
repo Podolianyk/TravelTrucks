@@ -1,16 +1,16 @@
 import { NavLink, Outlet } from "react-router-dom";
-import { Suspense } from "react";
 import clsx from "clsx";
 import { FaStar } from "react-icons/fa6";
 import { CiMap } from "react-icons/ci";
 import { Bars } from "react-loader-spinner";
 import css from "./DetailTruckCard.module.css";
+import { Suspense } from "react";
 
 const getLinkClass = ({ isActive }) => {
   return clsx(css.link, isActive && css.active);
 };
 
-const DetailTruckCard = ({ truckId }) => {
+const DetailTruckCard = ({ truck }) => {
   const reverseLocation = (loc) => {
     if (!loc) return "";
     const parts = loc.split(", ");
@@ -20,31 +20,31 @@ const DetailTruckCard = ({ truckId }) => {
   return (
     <div className={css.detail_main_container}>
       <div>
-        <h3 className={css.detail_title}>{truckId.name}</h3>
+        <h3 className={css.detail_title}>{truck.name}</h3>
         <div className={css.container}>
           <div className={css.detail_review_container}>
             <FaStar className={css.icon_review} />
-            <p className={css.detail_review}>{`${truckId.rating}(${
-              truckId.reviews ? truckId.reviews.length : 0
+            <p className={css.detail_review}>{`${truck.rating}(${
+              truck.reviews ? truck.reviews.length : 0
             } Reviews)`}</p>
           </div>
           <div className={css.detail_location_container}>
             <CiMap className={css.icon_location} />
             <p>
-              {truckId.location
-                ? reverseLocation(truckId.location)
+              {truck.location
+                ? reverseLocation(truck.location)
                 : "Location not available"}
             </p>
           </div>
         </div>
-        <p className={css.detail_price}>{`€${truckId.price
+        <p className={css.detail_price}>{`€${truck.price
           .toFixed(2)
           .replace(".", ",")}`}</p>
       </div>
       <div>
         <ul className={css.detail_gallery_list}>
-          {truckId.gallery &&
-            truckId.gallery.map((image, index) => (
+          {truck.gallery &&
+            truck.gallery.map((image, index) => (
               <li className={css.detail_image_item} key={index}>
                 <img
                   className={css.detail_image}
@@ -55,7 +55,7 @@ const DetailTruckCard = ({ truckId }) => {
             ))}
         </ul>
       </div>
-      <p className={css.detail_description}>{truckId.description}</p>
+      <p className={css.detail_description}>{truck.description}</p>
       <ul className={css.detail_nav}>
         <li>
           <NavLink className={getLinkClass} to="features">
@@ -68,7 +68,7 @@ const DetailTruckCard = ({ truckId }) => {
           </NavLink>
         </li>
       </ul>
-      {/* <Suspense
+      <Suspense
         fallback={
           <div className={css.loader}>
             <Bars
@@ -82,9 +82,9 @@ const DetailTruckCard = ({ truckId }) => {
             />
           </div>
         }
-      > */}
-      <Outlet />
-      {/* </Suspense> */}
+      >
+        <Outlet />
+      </Suspense>
     </div>
   );
 };

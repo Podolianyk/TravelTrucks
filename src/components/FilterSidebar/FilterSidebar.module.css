@@ -1,5 +1,5 @@
 .filter_sidebar_container {
-  max-width: 360px;
+  width: 360px;
   display: flex;
   flex-direction: column;
 }
@@ -19,7 +19,7 @@ form {
 }
 
 .locationForm_container {
-  max-width: 360px;
+  width: 360px;
   display: flex;
   flex-direction: column;
   gap: 8px;

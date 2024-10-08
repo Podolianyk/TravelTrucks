@@ -1,37 +1,23 @@
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { getTrucksById } from "../../trucks-api";
+import { useState } from "react";
 import DetailTruckCard from "../../components/DetailTruckCard/DetailTruckCard";
 import css from "./DetailPage.module.css";
+import { selectTrucks } from "../../redux/trucks/selectors";
+import { useSelector } from "react-redux";
 
 const DetailPage = ({}) => {
-  const [truckId, setTruckId] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
   const { id } = useParams();
-
-  useEffect(() => {
-    const getDataOfTrack = async () => {
-      try {
-        setIsLoading(true);
-        setIsError(false);
-        const data = await getTrucksById(id);
-
-        setTruckId(data);
-      } catch (error) {
-        setIsError(true);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-    getDataOfTrack();
-  }, [id]);
+  const allTrucks = useSelector(selectTrucks);
+  const truck = allTrucks.find((truck) => truck.id === id);
+  // console.log(truck);
 
   return (
     <div className={css.detail_page_container}>
       {isLoading && <p>Loading information, please wait...</p>}
       {isError && <p>Oops! There was an error! Try reloading!</p>}
-      {truckId && <DetailTruckCard truckId={truckId} />}
+      {truck && <DetailTruckCard truck={truck} />}
     </div>
   );
 };

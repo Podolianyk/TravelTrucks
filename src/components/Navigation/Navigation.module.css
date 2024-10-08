@@ -13,10 +13,9 @@
 }
 
 .nav_list {
+  width: 138px;
   display: flex;
-  flex-direction: row;
   gap: 32px;
   padding-top: 24px;
   padding-bottom: 24px;
-  justify-content: center;
 }

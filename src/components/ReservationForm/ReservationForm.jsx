@@ -37,8 +37,13 @@ const ReservationSchema = Yup.object().shape({
 
 const ReservationForm = ({ onReservation }) => {
   const handleSubmit = (values, actions) => {
-    onReservation(values);
-    // toast.success(`Successful registration.`);
+    onReservation(values)
+      .unwrap()
+      .then((values) =>
+        toast.success(`Your request has been successfully sent!`)
+      )
+      .catch((error) => toast.error(`${error}`));
+
     actions.resetForm();
   };
 
